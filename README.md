@@ -129,9 +129,6 @@ Parkinson_Disease_Detection/
 ├── sample_data/                            # Example volumes already registered to PD25
 │   ├── Healthy/                            # IXI subjects
 │   └── PD/                                 # PPMI subject (git-ignored, see note below)
-├── docs/
-│   ├── Project_Report.pdf
-│   └── Final_Presentation.pptx
 ├── assets/                                 # Figures exported from the notebook outputs
 ├── requirements.txt
 ├── .gitignore
