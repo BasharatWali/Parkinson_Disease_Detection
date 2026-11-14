@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Parkinson Detector</title>
+ <style>
+      body::after {
+        content: "";
+        background: url('static/Background.png');
+        background-size: cover;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+             h1 {
+             color: #33;
+             text-align: center;
+             padding: 10px 0;
+             font-size: 60px;
+             }
+             form {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 10px;
+             padding: 5px;
+             color: #3;
+             font-size: 20px;
+             }
+             button {
+             padding: 10px 20px;
+             color: #FEFE06;
+             background-color: #001E7F;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             }
+             #result {
+             margin: 20px;
+             padding: 40px 40px;
+             border: 1px solid black;
+             border-radius: 5px;
+             font-size:1.7rem;
+             font-weight: bold;
+            }
+            #image {
+            margin-top: 10px;
+            }
+            .file-input-container {
+              position: relative;
+              display: inline-block;
+            }
+            
+            #submit {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              cursor: pointer;
+            }
+            
+            .custom-file-button {
+              display: inline-block;
+              background-color: #0693FE;
+              color: #fff;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+              cursor: pointer;
+            }
+            
+            /* Style on hover (optional) */
+            .custom-file-button:hover {
+              background-color: #45a049;
+            }
+
+            
+ </style>
+</head>
+<body>
+ <h1>Parkinson Predictor</h1>
+ <form action="/predict" method="post" enctype="multipart/form-data">
+ <div class="file-input-container">
+  <input id="submit" type="file" name="file" accept=".nii, .nii.gz" onchange="document.getElementById('file-name').innerHTML = this.files[0].name">
+  <label for="submit" class="custom-file-button">Choose a File</label>
+  <span id="file-name"></span>
+</div>
+
+
+ <button type="submit">Predict</button>
+ </form>
+ <div id="result">
+    {% if prediction_text %}
+        {{ prediction_text }}
+    {% elif error %}
+        Error: {{ error }}
+    {% endif %}
+ </div>
+ <div id="image">
+    {% if prediction_text %}
+        <img src="{{ url_for('static', filename='middle_slice.png') }}" alt="Middle slice of the NIfTI image">
+    {% endif %}
+ </div>
+</body>
+</html>

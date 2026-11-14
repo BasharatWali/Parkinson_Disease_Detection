@@ -1,0 +1,19 @@
+# PPMI sample scan: PPMI data is covered by a data-use agreement that generally
+# does not permit public redistribution. Remove this line only if you have confirmed it is allowed.
+sample_data/PD/
+
+# Raw / intermediate data produced by the notebook
+Dicoms/
+Nifti/
+Registered/
+Features2/
+*.dcm
+
+# Runtime output of the web app
+app/static/middle_slice.png
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+docs

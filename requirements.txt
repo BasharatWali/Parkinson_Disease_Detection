@@ -1,0 +1,21 @@
+# Inferred from the notebook and app/Predictor.py imports. Versions were not recorded
+# (the notebook ran on Google Colab, Python 3.10), so none are pinned.
+# The pickled models in app/models/ were created with scikit-learn 1.2.2; installing that
+# exact version is the safest way to load them in the web app.
+# System dependency for the notebook's DICOM conversion step: dcm2niix (apt-get install dcm2niix).
+
+# Notebook
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+nibabel
+nilearn
+natsort
+antspyx
+pyradiomics
+
+# Web app (app/Predictor.py)
+flask
