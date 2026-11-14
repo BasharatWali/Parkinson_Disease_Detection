@@ -145,7 +145,7 @@ Parkinson_Disease_Detection/
 
 ## Author
 
-**Basharat Ali**. Machine Learning course project (MS-AI, Fall 2023), Department of AI and Data Science, SEECS, National University of Sciences and Technology (NUST), Islamabad. Instructor: Dr. Nazia Perwaiz.
+**Basharat Ali**. Machine Learning course project (MS-AI, Fall 2023), Department of AI and Data Science, SEECS, National University of Sciences and Technology (NUST), Islamabad.
 
 ## References
 
